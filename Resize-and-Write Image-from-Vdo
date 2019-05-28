@@ -1,0 +1,32 @@
+import cv2
+
+#Open file your name
+cap = cv2.VideoCapture('video1.mp4')
+#video1.mp4 is file you want open
+
+
+
+success,image = vidcap.read()
+
+count = 0
+#Build variable 
+
+while success:
+	cv2.resized(image,(200,200))
+  #(200,200) is size image you want change from original 
+  
+	cv2.imwrite("C:\\Users\\toptammalak\\Desktop\\resize\\%d.jpg" % count, image)     # save frame as JPEG file
+  #Location is you save image 
+  #.jpg is type of file you can change type of file .bmp , .png etc
+  
+  
+	print('Read a new frame: ', success)
+  #Show text when code complete
+  
+  #If you want count image or you want total image delete line 26 - 28
+	count += 1
+    if count > 21:
+        break
+
+vidcap.release()
+cv2.destroyAllWindows()
